@@ -1,0 +1,14 @@
+{
+  "name": "next-portfolio",
+  "version": "1.0.0",
+  "description": "NextJS Portfolio",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next"
+  },
+  "dependencies": {
+    "next": "^10.0.8",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
