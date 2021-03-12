@@ -1,13 +1,14 @@
 import Layout from '../components/Layout'
 
-export default ({
+const App = ({
                     Component,
                     pageProps
                 }) => {
-    console.log(pageProps)
     return (
         <Layout>
             <Component {...pageProps} />
         </Layout>
     )
 }
+
+export default App
