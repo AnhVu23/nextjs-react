@@ -42,7 +42,7 @@ const Layout = ({
                 {children}
             </main>
             <footer>
-                &copy: {new Date().getFullYear()}
+                &copy; {new Date().getFullYear()}
             </footer>
         </div>
     )
