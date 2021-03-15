@@ -6,7 +6,8 @@ import NProgress from 'nprogress'
 
 const Layout = ({
                     children,
-                    title
+                    title = 'Next.js',
+    description,
                 }) => {
     const router = useRouter()
     useEffect(() => {
@@ -24,19 +25,22 @@ const Layout = ({
     return (
         <div>
             <header>
-                <Link href='/'>
-                    <a>Home</a>
-                </Link>
-                <Link href='/about'>
-                    <a>About</a>
-                </Link>
-                <Link href='/hire_me'>
-                    <a>Hire me</a>
-                </Link>
+                <nav>
+                    <Link href='/'>
+                        <a>Home</a>
+                    </Link>
+                    <Link href='/about'>
+                        <a>About</a>
+                    </Link>
+                    <Link href='/hire_me'>
+                        <a>Hire me</a>
+                    </Link>
+                </nav>
             </header>
             <Head>
-                <title>Anh Vu</title>
+                <title>{title}</title>
                 <meta name='viewport' content='width=device-width'/>
+                <meta name='description' content={description}/>
             </Head>
             <main>
                 {children}
@@ -44,6 +48,36 @@ const Layout = ({
             <footer>
                 &copy; {new Date().getFullYear()}
             </footer>
+            <style jsx>{`
+                .container {
+                    max-width: 800px;
+                    margin: 0 auto;
+                    background: #f6f6ef;
+                }
+                nav {
+                    display: flex;
+                    flex-direction: row;
+                    background: #f6f6ef;
+                    padding: 1em;
+                }
+                nav > * {
+                    padding: 0 1rem;
+                    margin: 0 1rem;
+                    align-items: center
+                    color: black;
+                }
+                nav a {
+                    text-decoration: none;
+                }
+            `}</style>
+            <style jsx global>{`
+                body {
+                    background: white;
+                    font-family: Verdana, Geneva, sans-serif
+                }
+            `}
+
+            </style>
         </div>
     )
 }

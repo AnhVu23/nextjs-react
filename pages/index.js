@@ -8,7 +8,9 @@ export default class Home extends React.Component {
         try {
             const res = await fetch('https://node-hnapi.herokuapp.com/news')
             stories = await res.json()
-
+            if (stories.message) {
+                stories = []
+            }
         } catch (e) {
             console.log(e)
             stories = []
